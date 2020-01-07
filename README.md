@@ -6,9 +6,13 @@ Working example: https://www.mattmayes.com
 
 Current changes are related to colors, layout, and performance. 
 
+## Noteworthy Updates
+* 1/7/2020 - inlined primary/print theme css (not toc related). If your compressed css is under 10kb, this is good - improved my mobile page score from 76 to 94.
+
 ### In the works:
 * Search
 * Dark mode
 
 ### ToDo:
 * Update exampleSite
+* Removed unused css

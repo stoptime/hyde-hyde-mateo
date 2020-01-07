@@ -1,13 +1,13 @@
 {{ partial "header/styles-highlight.html" . }}
 
 {{ $options := (dict "outputStyle" "compressed" "enableSourceMap" true) }}
-{{ $optionsPrint := (dict "outputStyle" "compressed") }}
+{{ $optionsInline := (dict "outputStyle" "compressed") }}
 
-{{ with resources.Get "scss/hyde-hyde-mateo.scss" | toCSS $options }}
+{{ with resources.Get "scss/hyde-hyde-mateo.scss" | toCSS $optionsInline }}
 <style type="text/css" media="screen">{{ .Content | safeCSS }}</style>
 {{ end }}
 
-{{ with resources.Get "scss/print.scss" | toCSS $optionsPrint }}
+{{ with resources.Get "scss/print.scss" | toCSS $optionsInline }}
 <style type="text/css" media="print">{{ .Content | safeCSS }}</style>
 {{ end }}
 
