@@ -26,28 +26,13 @@ body {
 img {
   max-width: 100%;
 }
-blockquote,
-ul {
-  margin: 0;
-}
 
-.sidebar {
+.sidebar, 
+.navigation,
+.post__related,
+.gist-meta,
+#disqus_thread
+ {
   display: none !important;
-}
-
-.navigation {
-  display: none !important;
-}
-
-.post__related {
-  display: none !important;
-}
-
-.gist-meta {
-  display: none !important;
-}
-
-#disqus_thread {
-	display: none !important;
 }
 

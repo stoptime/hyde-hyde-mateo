@@ -1,18 +1,14 @@
 {{ partial "header/styles-highlight.html" . }}
 
 {{ $options := (dict "outputStyle" "compressed" "enableSourceMap" true) }}
-{{ $optionsCss := (dict "outputStyle" "compressed") }}
+{{ $optionsPrint := (dict "outputStyle" "compressed") }}
 
-{{ $style := resources.Get "scss/hyde-hyde.scss" | toCSS $options | fingerprint }}
+{{ $style := resources.Get "scss/hyde-hyde-mateo.scss" | toCSS $options | fingerprint }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" media="screen">
 
-{{ $printStyle := resources.Get "scss/print.scss" | toCSS $options | fingerprint }}
-<link rel="stylesheet" href="{{ $printStyle.RelPermalink }}" integrity="{{ $printStyle.Data.Integrity }}" media="print">
-
-{{ range .Site.Params.customCss -}}
-{{ $customStyle := resources.Get . | toCSS $optionsCss | fingerprint }}
-<link rel="stylesheet" href="{{ $customStyle.RelPermalink }}" integrity="{{ $customStyle.Data.Integrity }}" media="screen">
-{{- end }}
+{{ with resources.Get "scss/print.scss" | toCSS $optionsPrint }}
+<style type="text/css" media="print">{{ .Content | safeCSS }}</style>
+{{ end }}
 
 {{ with .Site.Params.toc }}
 {{ if eq . "hugo" }}
