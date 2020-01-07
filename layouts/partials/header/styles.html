@@ -3,8 +3,9 @@
 {{ $options := (dict "outputStyle" "compressed" "enableSourceMap" true) }}
 {{ $optionsPrint := (dict "outputStyle" "compressed") }}
 
-{{ $style := resources.Get "scss/hyde-hyde-mateo.scss" | toCSS $options | fingerprint }}
-<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" media="screen">
+{{ with resources.Get "scss/hyde-hyde-mateo.scss" | toCSS $options }}
+<style type="text/css" media="screen">{{ .Content | safeCSS }}</style>
+{{ end }}
 
 {{ with resources.Get "scss/print.scss" | toCSS $optionsPrint }}
 <style type="text/css" media="print">{{ .Content | safeCSS }}</style>
