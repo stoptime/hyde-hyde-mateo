@@ -6,6 +6,9 @@
   body {
     font-size: $small-device-font-size;
   }
+  body {
+    border-top: 10px solid $dark;
+  }
   .sidebar {
     li {
       padding: .1rem 0;
@@ -68,6 +71,9 @@
   input#menuToggle:checked ~ .menu-content {
     max-height: 100% !important;
   }
+  button {
+		width: 100%;
+	}
   .social {
     padding: 1em 0 1em 0;
   }

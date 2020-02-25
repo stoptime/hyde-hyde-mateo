@@ -35,6 +35,14 @@
   padding: 0 0 1rem 0;
 }
 
+.post a {
+  text-decoration: underline;
+}
+
+.post a:hover {
+  text-decoration: none;
+}
+
 #references {
   li {
     font-size: 0.9rem;

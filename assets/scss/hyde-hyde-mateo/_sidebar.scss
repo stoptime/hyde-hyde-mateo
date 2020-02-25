@@ -1,5 +1,5 @@
 .sidebar {
-  background-color: $sidebar-color;
+  background-color: $primary;
   color: rgb(255, 255, 255);
   color: rgba(255, 255, 255, 0.5);
   padding: 2rem 1rem;
@@ -7,16 +7,25 @@
   a {
     color: $gray-1;
     border: none;
+    
     &:hover {
-      color: $link-color;
-    }
-    &:focus {
-      color: $link-color;
+      color: $neutral_dark;
     }
   }
+
   .sidebar-about {
     text-align: center;
   }
+
+  .site__title a {
+    font-size: 2rem;
+    color: $opacity_color;
+  }
+
+  .site__title a:hover {
+    color: #fff;
+  }
+
   .author-image {
     display: block;
     margin-top: 4px;
@@ -29,6 +38,13 @@
   margin-bottom: 2rem;
   margin-top: 2rem;
   padding-left: 0;
+}
+
+.sidebar-nav a {
+  display: block;
+}
+.sidebar-nav a:hover {
+  background-color: $light;
 }
 
 .sidebar-nav-item {
@@ -51,13 +67,17 @@
   font-weight: 300;
 }
 
-.social {
+.sidebar .social {
   text-align: center;
   a {
     padding: 0 4px;
     @include link-no-decoration();
+    
+    &:hover {
+      color: $opacity_color;
+    }
   }
-}
+}  
 
 .img--circle {
 	border-radius: 50%;
